@@ -24,6 +24,8 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("com.squareup.okhttp3:okhttp:4.10.0")
+	implementation("io.github.microutils:kotlin-logging-jvm:2.1.20")
+	implementation("com.microsoft.sqlserver:mssql-jdbc:8.4.1.jre11")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }

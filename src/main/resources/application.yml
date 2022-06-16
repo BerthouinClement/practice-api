@@ -1,0 +1,18 @@
+server:
+  port : 6666
+spring:
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: "jdbc:sqlserver://localhost;databaseName=practicedb"
+    username: sa
+    password: sqladmin
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.SQLServer2012Dialect
+    hibernate:
+      ddl-auto: update
+
+

@@ -5,8 +5,8 @@ import org.springframework.data.jpa.domain.Specification
 
 class UserSpecifications {
 
-    fun containsUserEmail(userEmail: String?): Specification<User> {
-        return Specification<User> { root, query, builder ->
+    private fun containsUserEmail(userEmail: String?): Specification<User> {
+        return Specification<User> { root, _, builder ->
             if (!userEmail.isNullOrBlank()) {
                 builder.like(builder.lower(root.get(User::email.name)), "%${userEmail.lowercase()}%")
             } else {
@@ -15,8 +15,8 @@ class UserSpecifications {
         }
     }
 
-    fun containsLasName(lastName: String?): Specification<User> {
-        return Specification<User> { root, query, builder ->
+    private fun containsLasName(lastName: String?): Specification<User> {
+        return Specification<User> { root, _, builder ->
             if (!lastName.isNullOrBlank()) {
                 builder.like(builder.lower(root.get(User::lastName.name)), "%${lastName.lowercase()}%")
             } else {
@@ -25,8 +25,8 @@ class UserSpecifications {
         }
     }
 
-    fun containsFirstName(firstName: String?): Specification<User> {
-        return Specification<User> { root, query, builder ->
+    private fun containsFirstName(firstName: String?): Specification<User> {
+        return Specification<User> { root, _, builder ->
             if (!firstName.isNullOrBlank()) {
                 builder.like(builder.lower(root.get(User::firstName.name)), "%${firstName.lowercase()}%")
             } else {

@@ -3,7 +3,7 @@ package fr.cb.practiceapi.models.entities
 import javax.persistence.*
 
 @Entity
-@Table(name = "user")
+@Table(name = "[user]")
 data class User(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +20,6 @@ data class User(
 ) {
     @PrePersist
     fun emailToLowerCase() {
-        email = email.uppercase()
+        email = email.lowercase()
     }
 }
